@@ -26,7 +26,6 @@ A brief guide on how to use the project and any relevant code snippets.
     import cv2 as cv
     from pytesseract import Output
     import pytesseract
-};
 ```
 
 ## Contributing
