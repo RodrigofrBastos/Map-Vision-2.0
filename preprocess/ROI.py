@@ -4,12 +4,12 @@ import numpy as np
 
 # Carrega a imagem
 img = cv2.imread('/home/rod/mapvision-ras/images/placa1.jpeg')
-
+# img = cv2.imread('dataset/fiesta-noite(2).jpeg')
 # Converte a imagem para tons de cinza
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Aplica a detecção de bordas usando o algoritmo Canny
-edged = cv2.Canny(gray, 30, 200)
+edged = cv2.Canny(gray, 100, 500)
 
 # Encontra os contornos na imagem
 contours, hierarchy = cv2.findContours(edged, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
