@@ -4,7 +4,7 @@ import pytesseract
 from pytesseract import Output
 
 # Carrega a imagem
-img = cv2.imread('dataset/fiesta-noite(1).jpeg')
+img = cv2.imread('dataset/ecosport-noite.jpeg')
 
 # Converte a imagem para tons de cinza
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

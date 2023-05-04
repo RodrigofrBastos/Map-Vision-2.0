@@ -1,11 +1,11 @@
 import cv2
 import numpy as np
 
-
 # Carrega a imagem
-img = cv2.imread('/home/rod/mapvision-ras/images/placa1.jpeg')
+img = cv2.imread('dataset/argo-prata.jpg')
 # img = cv2.imread('dataset/fiesta-noite(2).jpeg')
 # Converte a imagem para tons de cinza
+
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Aplica a detecção de bordas usando o algoritmo Canny
@@ -20,7 +20,7 @@ contours = sorted(contours, key=cv2.contourArea, reverse=True)[:10]
 # Itera sobre os contornos e identifica o retângulo que envolve a placa do carro
 for contour in contours:
     perimeter = cv2.arcLength(contour, True)
-    approx = cv2.approxPolyDP(contour, 0.02 * perimeter, True)
+    approx = cv2.approxPolyDP(contour,0.02 * perimeter, True)
     
     # A placa do carro tem geralmente quatro lados
     if len(approx) == 4:
@@ -29,9 +29,12 @@ for contour in contours:
         
         # Desenha o retângulo ao redor da placa
         cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
-        break  # Para a iteração quando a placa for encontrada
+        cv2.putText(img, "1St",(x,y-5),cv2.FONT_HERSHEY_PLAIN,2,(0,255,0),2)
+        
+        # Para a iteração quando a placa for encontrada
+        break
 
 # Exibe a imagem com a ROI identificada
-cv2.imshow("ROI", roi)
+cv2.imshow("ROI", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
