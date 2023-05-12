@@ -5,7 +5,7 @@ from pytesseract import Output
 import re
 
 # Carrega a imagem
-img = cv2.imread('dataset/template.png')
+img = cv2.imread('dataset/didnt-work/hb20-branco.jpg')
 # img = cv2.imread('dataset/fiesta-noite(2).jpeg')
 # Converte a imagem para tons de cinza
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -31,10 +31,10 @@ for contour in contours:
         
         # Desenha o retângulo ao redor da placa
         cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
-        break  # Para a iteração quando a placa for encontrada
+# Para a iteração quando a placa for encontrada
 
 # Exibe a imagem com a ROI identificada
-#cv2.imshow("ROI", roi)
+cv2.imshow("ROId", img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
