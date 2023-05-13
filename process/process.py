@@ -3,11 +3,12 @@ import numpy as np
 import pytesseract
 from pytesseract import Output
 import re
+# from python_lib.functions import license_plate
 
 myconfig = r"--psm 6 --oem 3"
 
 # Carrega a imagem
-img = cv2.imread('dataset/didnt-work/hb20-branco.jpg')
+img = cv2.imread('dataset/template.png')
 
 # Converte a imagem para tons de cinza
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -73,7 +74,8 @@ while '' in lista_sem_caracteres_especiais:
     lista_sem_caracteres_especiais.remove('') # remove espaços vazios da lista 
 
 print(lista_sem_caracteres_especiais)
-        
+# license_plate(lista_sem_caracteres_especiais)
+
 #cv2.imshow("img", roi)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -3,6 +3,8 @@ import numpy as np
 import pytesseract
 from pytesseract import Output
 
+
+
 # Carrega a imagem
 img = cv2.imread('dataset/fiesta-noite(1).jpeg')
 
