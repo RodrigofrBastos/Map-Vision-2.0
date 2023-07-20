@@ -3,7 +3,7 @@ import numpy as np
 
 
 # Carrega a imagem
-img = cv2.imread('dataset/PlacaMercosulHeader.webp')
+img = cv2.imread('dataset/template.png')
 # img = cv2.imread('/home/rod/mapvision-ras/images/placa1.jpeg')
 # img = cv2.imread('dataset/fiesta-noite(2).jpeg')
 # Converte a imagem para tons de cinza
